@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { 
   FileCheck, 
   Crosshair, 
@@ -8,6 +8,8 @@ import {
   Siren, 
   GraduationCap, 
   ShieldCheck,
+  X,
+  ArrowRight,
   LucideIcon
 } from "lucide-react";
 
@@ -37,9 +39,32 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
 export default function ServicesSection() {
   const data = servicesData as CategoryData[];
   const [activeTab, setActiveTab] = useState<number>(0);
+  const [selectedService, setSelectedService] = useState<{
+    service: ServiceDetail;
+    category: string;
+  } | null>(null);
 
   const activeCategory = data[activeTab];
   const ActiveIcon = CATEGORY_ICONS[activeCategory.category] || FileCheck;
+
+  // Lock body scroll when modal is active
+  useEffect(() => {
+    if (selectedService) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedService(null);
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selectedService]);
 
   return (
     <section id="services" className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
@@ -124,12 +149,16 @@ export default function ServicesSection() {
           {activeCategory.services.map((item, idx) => (
             <div
               key={idx}
-              className="group relative flex flex-col justify-between p-7 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#16f97d]/50 backdrop-blur-xl transition-all duration-300 hover:shadow-[0_10px_30px_-10px_rgba(22,249,125,0.2)] hover:-translate-y-1"
+              onClick={() => setSelectedService({ service: item, category: activeCategory.category })}
+              className="group relative flex flex-col justify-between p-7 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#16f97d]/50 backdrop-blur-xl transition-all duration-300 hover:shadow-[0_10px_30px_-10px_rgba(22,249,125,0.2)] hover:-translate-y-1 cursor-pointer"
             >
               <div>
-                <div className="mb-3">
+                <div className="flex items-center justify-between mb-3">
                   <span className="inline-block text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-md bg-white/[0.05] border border-white/10 text-gray-300">
                     {activeCategory.category}
+                  </span>
+                  <span className="text-xs text-gray-500 group-hover:text-[#16f97d] transition-colors flex items-center gap-1 font-mono">
+                    View <ArrowRight className="w-3 h-3" />
                   </span>
                 </div>
 
@@ -141,7 +170,7 @@ export default function ServicesSection() {
                   {item.tagline}
                 </p>
 
-                <p className="text-sm text-gray-400 font-light leading-relaxed mb-6">
+                <p className="text-sm text-gray-400 font-light leading-relaxed mb-6 line-clamp-3">
                   {item.description}
                 </p>
               </div>
@@ -152,7 +181,7 @@ export default function ServicesSection() {
                   <ShieldCheck className="w-4 h-4 text-[#16f97d] shrink-0 mt-0.5" />
                   <span className="text-xs font-mono text-gray-400 leading-tight">
                     <strong className="text-gray-300 font-normal">Obligation:</strong>{" "}
-                    <span className="text-gray-400/80">{item.obligation}</span>
+                    <span className="text-gray-400/80 line-clamp-1">{item.obligation}</span>
                   </span>
                 </div>
               </div>
@@ -160,6 +189,76 @@ export default function ServicesSection() {
           ))}
         </div>
       </div>
+
+      {/* Detail Modal Overlay */}
+      {selectedService && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md animate-in fade-in duration-200"
+          onClick={() => setSelectedService(null)}
+        >
+          <div 
+            className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-3xl bg-[#0a0a0a] border border-[#16f97d]/30 p-6 sm:p-8 shadow-[0_0_50px_rgba(22,249,125,0.15)] transition-all"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Ambient Background Glow inside modal */}
+            <div className="absolute top-0 right-0 w-64 h-64 bg-[#16f97d]/10 blur-[100px] pointer-events-none rounded-full" />
+
+            {/* Modal Header */}
+            <div className="flex items-start justify-between gap-4 mb-6 relative z-10">
+              <div className="flex flex-col gap-2">
+                <span className="self-start text-xs font-mono uppercase tracking-widest px-3 py-1 rounded-full bg-[#16f97d]/10 border border-[#16f97d]/30 text-[#16f97d]">
+                  {selectedService.category}
+                </span>
+                <h3 className="text-2xl sm:text-3xl font-black text-white">
+                  {selectedService.service.title}
+                </h3>
+              </div>
+              <button
+                onClick={() => setSelectedService(null)}
+                className="p-2 rounded-full bg-white/[0.05] hover:bg-white/10 border border-white/10 text-gray-400 hover:text-white transition-colors"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+
+            {/* Tagline Highlight */}
+            <div className="mb-6 p-4 rounded-xl bg-white/[0.02] border-l-2 border-[#16f97d] relative z-10">
+              <p className="text-sm sm:text-base font-semibold text-[#16f97d]">
+                {selectedService.service.tagline}
+              </p>
+            </div>
+
+            {/* Detailed Description */}
+            <div className="space-y-4 mb-8 text-gray-300 font-light leading-relaxed text-sm sm:text-base relative z-10">
+              <h5 className="text-xs font-mono uppercase tracking-wider text-gray-400">Detailed Scope</h5>
+              <p className="whitespace-pre-line">
+                {selectedService.service.description}
+              </p>
+            </div>
+
+            {/* Compliance & Obligation Box */}
+            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 relative z-10">
+              <div className="flex items-center gap-2 mb-2 text-[#16f97d]">
+                <ShieldCheck className="w-5 h-5" />
+                <span className="text-xs font-mono font-bold uppercase tracking-wider">Regulatory & Compliance Obligation</span>
+              </div>
+              <p className="text-sm font-mono text-gray-300 leading-relaxed">
+                {selectedService.service.obligation}
+              </p>
+            </div>
+
+            {/* Action Footer */}
+            <div className="mt-8 pt-6 border-t border-white/10 flex justify-end gap-3 relative z-10">
+              <button
+                onClick={() => setSelectedService(null)}
+                className="px-6 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/10 border border-white/10 text-sm font-semibold text-white transition-all cursor-pointer"
+              >
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

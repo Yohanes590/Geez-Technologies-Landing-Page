@@ -1,16 +1,54 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Lenis from "lenis";
 import MoltenMetal from "@/components/MoltenMetal";
 import BlurText from "@/components/BlurText";
-import  SpecularButton  from "@/components/SpecularButton";
+import SpecularButton from "@/components/SpecularButton";
+
 export default function HeroPage() {
   const [activeStep, setActiveStep] = useState<1 | 2 | 3>(1);
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    lenisRef.current = lenis;
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
+  // Programmatic smooth scroll handler using Lenis
+  const scrollToSection = (target: string | HTMLElement) => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(target, {
+        duration: 1.5,
+        offset: -40,
+      });
+    } else {
+      // Fallback if Lenis isn't initialized
+      const el = typeof target === "string" ? document.querySelector(target) : target;
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section className="relative min-h-screen w-full bg-black text-zinc-100 flex items-center justify-center overflow-hidden pt-[100px] pb-16 font-sans">
-      
       <div className="absolute inset-0 z-0 pointer-events-none opacity-70">
         <MoltenMetal
           color1="#00ff66"
@@ -37,9 +75,7 @@ export default function HeroPage() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-transparent via-black/60 to-black pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
-        
         <div className="lg:col-span-7 flex flex-col items-start text-left">
-          
           <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-green-950/70 border border-green-500/50 text-green-400 text-xs font-mono mb-6 backdrop-blur-md shadow-[0_0_15px_rgba(0,255,102,0.2)]">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
             <span>24/7 Enterprise Data Protection</span>
@@ -47,20 +83,20 @@ export default function HeroPage() {
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
             <BlurText
-        text="Protect Your Company Data / Legacy"
-        delay={200}
-  animateBy="words"
-  direction="top"
-  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]"
-        />
-            <div className="">
-                    <BlurText
-        text="With Geez Security"
-        delay={200}
-  animateBy="letters"
-  direction="bottom"
-  className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-green-400 leading-[1.15]"/>
-              
+              text="Protect Your Company Data / Legacy"
+              delay={200}
+              animateBy="words"
+              direction="top"
+              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]"
+            />
+            <div>
+              <BlurText
+                text="With Geez Security"
+                delay={200}
+                animateBy="letters"
+                direction="bottom"
+                className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-green-400 leading-[1.15]"
+              />
             </div>
           </h1>
 
@@ -69,34 +105,41 @@ export default function HeroPage() {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
- <SpecularButton
-  size="lg"
-  radius={12}
-  tint="#00e937"
-  tintOpacity={0.1}
-  blur={16}
-  textColor="#f4f4f5"
-  lineColor="#00ff55"
-  baseColor="#02170b"
-  intensity={2}
-  shineSize={38}
-  shineFade={30}
-  thickness={0.6}
-  speed={0.6}
-  followMouse={false}
-  proximity={200}
-  autoAnimate
-  onClick={() => console.log('clicked')}
->
-  Get Started
-</SpecularButton>
-            
-         <Link
-  href="/#about"
-  className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-[#16f97d] bg-zinc-950/80 border border-[#16f97d]/30 hover:bg-[#16f97d]/10 hover:border-[#16f97d] hover:shadow-[0_0_20px_rgba(22,249,125,0.15)] rounded-xl backdrop-blur-md transition-all duration-300 active:scale-95 shrink-0"
->
-  Learn More
-</Link>
+            {/* Get Started Button -> Smooth scrolls to contact or services section */}
+            <div onClick={() => scrollToSection("#contact")}>
+              <SpecularButton
+                size="lg"
+                radius={12}
+                tint="#00e937"
+                tintOpacity={0.1}
+                blur={16}
+                textColor="#f4f4f5"
+                lineColor="#00ff55"
+                baseColor="#02170b"
+                intensity={2}
+                shineSize={38}
+                shineFade={30}
+                thickness={0.6}
+                speed={0.6}
+                followMouse={false}
+                proximity={200}
+                autoAnimate
+              >
+                Get Started
+              </SpecularButton>
+            </div>
+
+            {/* Learn More Button -> Smooth scrolls to #about section */}
+            <a
+              href="#about"
+              onClick={(e) => {
+                e.preventDefault();
+                scrollToSection("#about");
+              }}
+              className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-[#16f97d] bg-zinc-950/80 border border-[#16f97d]/30 hover:bg-[#16f97d]/10 hover:border-[#16f97d] hover:shadow-[0_0_20px_rgba(22,249,125,0.15)] rounded-xl backdrop-blur-md transition-all duration-300 active:scale-95 shrink-0 cursor-pointer"
+            >
+              Learn More
+            </a>
           </div>
 
           <div className="mt-12 pt-8 border-t border-zinc-800/80 w-full grid grid-cols-3 gap-6">
@@ -117,7 +160,6 @@ export default function HeroPage() {
 
         <div className="lg:col-span-5 w-full">
           <div className="bg-zinc-950/90 border border-green-500/40 rounded-2xl p-6 shadow-[0_0_50px_rgba(0,0,0,0.9)] backdrop-blur-xl relative">
-            
             <div className="flex items-center justify-between pb-4 border-b border-zinc-800">
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-red-500/80" />
@@ -129,7 +171,7 @@ export default function HeroPage() {
 
             <div className="mt-6 space-y-4">
               <p className="text-xs font-mono text-zinc-400 uppercase tracking-wider">Interactive System Diagnostic</p>
-              
+
               <div className="grid grid-cols-3 gap-2">
                 <button
                   onClick={() => setActiveStep(1)}
@@ -208,16 +250,19 @@ export default function HeroPage() {
             </div>
 
             <div className="mt-6 pt-4 border-t border-zinc-800 text-center">
-              <Link
-                href="/contact"
-                className="text-xs font-semibold text-green-400 hover:text-green-300 underline underline-offset-4"
+              <a
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection("#contact");
+                }}
+                className="text-xs font-semibold text-green-400 hover:text-green-300 underline underline-offset-4 cursor-pointer"
               >
                 Schedule a 15-minute consultation with an expert →
-              </Link>
+              </a>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

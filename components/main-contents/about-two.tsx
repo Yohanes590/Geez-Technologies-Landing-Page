@@ -1,6 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useRef } from "react";
+import Lenis from "lenis";
 import Strands from "@/components/Strands";
 import { 
   ShieldCheck, 
@@ -13,6 +14,44 @@ import {
 } from "lucide-react";
 
 export default function AboutSection() {
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      smoothWheel: true,
+    });
+
+    lenisRef.current = lenis;
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+      lenisRef.current = null;
+    };
+  }, []);
+
+  // Smooth scroll helper using Lenis instance
+  const scrollToSection = (target: string | HTMLElement) => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(target, {
+        duration: 1.5,
+        offset: -40,
+      });
+    } else {
+      // Fallback in case Lenis hasn't mounted yet
+      const el = typeof target === "string" ? document.querySelector(target) : target;
+      el?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const securityFeatures = [
     {
       icon: <Search className="w-6 h-6 text-[#16f97d]" />,
@@ -114,16 +153,20 @@ export default function AboutSection() {
             </div>
           ))}
         </div>
-
-        {/* 5. Call To Action Button */}
+  
+        {/* 5. Call To Action Button -> Smooth Scroll to #contact */}
         <div className="mt-14">
-          <Link
-            href="/contact"
-            className="inline-flex items-center gap-3 px-9 py-4 text-sm font-bold text-black bg-[#16f97d] hover:bg-[#56ed3a] rounded-xl transition-all duration-300 shadow-[0_0_30px_rgba(22,249,125,0.4)] hover:shadow-[0_0_50px_rgba(22,249,125,0.7)] active:scale-95 group"
+          <a
+            href="#contact"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToSection("#contact");
+            }}
+            className="inline-flex items-center gap-3 px-9 py-4 text-sm font-bold text-black bg-[#16f97d] hover:bg-[#56ed3a] rounded-xl transition-all duration-300 shadow-[0_0_30px_rgba(22,249,125,0.4)] hover:shadow-[0_0_50px_rgba(22,249,125,0.7)] active:scale-95 group cursor-pointer"
           >
             <span>Request Security Consultation</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
+          </a>
         </div>
 
       </div>

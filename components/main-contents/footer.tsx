@@ -107,10 +107,10 @@ export default function Footer() {
               </p>
 
               <a
-                href="mailto:support@geezsecurity.com"
+                href="mailto:soc@geezsecurity.com"
                 className="inline-flex items-center justify-between w-full py-2.5 px-3 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] border border-white/10 text-xs text-white font-mono transition-colors group"
               >
-                <span>support@geezsecurity.com</span>
+                <span>soc@geezsecurity.com</span>
                 <ArrowUpRight className="w-4 h-4 text-gray-400 group-hover:text-[#16f97d] transition-colors" />
               </a>
             </div>
