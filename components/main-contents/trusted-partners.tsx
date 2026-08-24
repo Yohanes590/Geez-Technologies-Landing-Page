@@ -62,16 +62,16 @@ const trustedPartners = [
     title: "Cloudflare Network Shield", 
     href: "#" 
   },
-  { 
-    node: (
-      <div className="group flex items-center gap-4 font-mono text-zinc-300 hover:text-[#16f97d] transition-colors cursor-pointer">
-        <SiShieldsdotio className="w-9 h-9 text-[#16f97d]/80 group-hover:text-[#16f97d] transition-colors" />
-        <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">INSA COMPLIANT</span>
-      </div>
-    ), 
-    title: "INSA Certified Standards", 
-    href: "#" 
-  },
+  // { 
+  //   node: (
+  //     <div className="group flex items-center gap-4 font-mono text-zinc-300 hover:text-[#16f97d] transition-colors cursor-pointer">
+  //       <SiShieldsdotio className="w-9 h-9 text-[#16f97d]/80 group-hover:text-[#16f97d] transition-colors" />
+  //       <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">INSA COMPLIANT</span>
+  //     </div>
+  //   ), 
+  //   title: "INSA Certified Standards", 
+  //   href: "#" 
+  // },
 ];
 
 export default function TrustedPartners() {
