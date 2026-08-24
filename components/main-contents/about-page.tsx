@@ -5,7 +5,7 @@ import { Shield, Target, Lock } from "lucide-react";
 
 export default function AboutSection() {
   return (
-    <section className="relative w-full h-screen bg-black text-zinc-100 py-24 px-6 lg:px-12 overflow-hidden border-t border-zinc-900">
+    <section id="about" className="relative w-full h-screen bg-black text-zinc-100 py-24 px-6 lg:px-12 overflow-hidden border-t border-zinc-900">
       
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-green-500/10 rounded-full blur-[140px] pointer-events-none" />
 

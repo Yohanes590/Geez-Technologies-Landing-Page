@@ -24,14 +24,21 @@ export default function ContactSection() {
     message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit =async (e: React.FormEvent) => {
     e.preventDefault();
-    // Logic for form handling/API goes here
+    
+  await fetch("/api/sending-message" , {
+    method:"POST",
+    headers:{
+      "content-type":"application/json"
+    },
+    body: JSON.stringify(formData)
+  })
     setSubmitted(true);
   };
 
   return (
-    <section className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
+    <section id="contact" className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
       {/* Soft Ambient Green Background Glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#16f97d]/10 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-[#16f97d]/5 blur-[150px] rounded-full pointer-events-none" />
@@ -72,10 +79,10 @@ export default function ContactSection() {
                   Bypass the intake queue for urgent containment, CERT reporting, or ransomware recovery support.
                 </p>
                 <a
-                  href="tel:+251900000000"
+                  href="tel:+251953537820"
                   className="inline-flex items-center justify-center gap-2 w-full py-3 px-4 rounded-xl bg-[#16f97d] text-black font-bold text-sm shadow-[0_0_20px_rgba(22,249,125,0.3)] hover:scale-[1.02] transition-all"
                 >
-                  <Phone className="w-4 h-4" /> Call Emergency Response
+                  <Phone className="w-4 h-4" /> Call Us Now
                 </a>
               </div>
 
@@ -86,8 +93,8 @@ export default function ContactSection() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <span className="text-xs font-mono text-gray-400 uppercase">Encrypted Email</span>
-                    <p className="text-sm font-bold text-white mt-0.5">security@institution.et</p>
+                    <span className="text-xs font-mono text-gray-400 uppercase">Support Email</span>
+                    <p className="text-sm font-bold text-white mt-0.5">support@geezsecurity.com</p>
                     <span className="text-[10px] text-gray-500 font-mono">PGP Key Available On Request</span>
                   </div>
                 </div>
@@ -102,7 +109,19 @@ export default function ContactSection() {
                     <span className="text-[10px] text-gray-500 font-mono">Secure On-Site Operations Center</span>
                   </div>
                 </div>
-              </div>
+
+                 <div className="flex items-start gap-4 pt-4 border-t border-white/[0.06]">
+                  <div className="p-3 rounded-xl bg-white/[0.05] border border-white/10 text-[#16f97d]">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <span className="text-xs font-mono text-gray-400 uppercase">Contact Number</span>
+                    <p className="text-sm font-bold text-white mt-0.5">+251 953 537 820</p>
+                    <p className="text-sm font-bold text-white mt-0.5">+251 963 301 530</p>
+                    <span className="text-[10px] text-gray-500 font-mono">Secure On-Site Operations Center</span>
+                  </div>
+                </div>
+              </div>``
             </div>
 
             {/* Compliance Guarantee Badges */}

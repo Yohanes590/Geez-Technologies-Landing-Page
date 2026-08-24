@@ -42,7 +42,7 @@ export default function ServicesSection() {
   const ActiveIcon = CATEGORY_ICONS[activeCategory.category] || FileCheck;
 
   return (
-    <section className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
+    <section id="services" className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
       {/* Soft Ambient Green Background Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#16f97d]/10 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-[#16f97d]/5 blur-[150px] rounded-full pointer-events-none" />

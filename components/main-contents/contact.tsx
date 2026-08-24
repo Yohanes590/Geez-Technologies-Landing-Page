@@ -31,7 +31,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
+    <section id="contact" className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
       {/* Soft Ambient Green Background Glows */}
       <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-[#16f97d]/10 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-[#16f97d]/5 blur-[150px] rounded-full pointer-events-none" />

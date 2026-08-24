@@ -2,11 +2,16 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import { useLenis } from "lenis/react";
 
 export default function NavigationBar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const lenis = useLenis();
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +21,32 @@ export default function NavigationBar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Helper function for Lenis navigation
+  const handleScrollTo = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    target: string
+  ) => {
+    if (target.startsWith("#")) {
+      e.preventDefault();
+      
+      if (pathname === "/") {
+        lenis?.scrollTo(target, { offset: -80 });
+      } else {
+        router.push(`/${target}`);
+      }
+    } else if (target === "/") {
+      e.preventDefault();
+      if (pathname === "/") {
+        lenis?.scrollTo(0, { offset: 0 });
+      } else {
+        router.push("/");
+      }
+    }
+
+    // Close mobile menu on link click
+    if (isOpen) setIsOpen(false);
+  };
 
   return (
     <>
@@ -27,7 +58,11 @@ export default function NavigationBar() {
         }`}
       >
         <div className="logo-container flex-1 flex justify-start">
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link 
+            href="/" 
+            onClick={(e) => handleScrollTo(e, "/")}
+            className="flex items-center gap-2 group"
+          >
             <img
               src="/assets/logo.webp"
               alt="Logo"
@@ -46,6 +81,7 @@ export default function NavigationBar() {
           >
             <Link
               href="/"
+              onClick={(e) => handleScrollTo(e, "/")}
               className={`nav-link text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 ${
                 scrolled
                   ? "text-zinc-300 hover:text-green-400 bg-transparent"
@@ -55,7 +91,8 @@ export default function NavigationBar() {
               Home
             </Link>
             <Link
-              href="/about"
+              href="#about"
+              onClick={(e) => handleScrollTo(e, "#about")}
               className={`nav-link text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 ${
                 scrolled
                   ? "text-zinc-300 hover:text-green-400 bg-transparent"
@@ -65,7 +102,8 @@ export default function NavigationBar() {
               About
             </Link>
             <Link
-              href="/services"
+              href="#services"
+              onClick={(e) => handleScrollTo(e, "#services")}
               className={`nav-link text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 ${
                 scrolled
                   ? "text-zinc-300 hover:text-green-400 bg-transparent"
@@ -75,7 +113,8 @@ export default function NavigationBar() {
               Services
             </Link>
             <Link
-              href="/contact"
+              href="#contact"
+              onClick={(e) => handleScrollTo(e, "#contact")}
               className={`nav-link text-sm font-medium px-4 py-2 rounded-full transition-all duration-200 ${
                 scrolled
                   ? "text-zinc-300 hover:text-green-400 bg-transparent"
@@ -88,7 +127,10 @@ export default function NavigationBar() {
         </div>
 
         <div className="button-container hidden md:flex flex-1 justify-end">
-          <button className="contactButton relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-black bg-green-500 rounded-full overflow-hidden transition-all duration-300 hover:bg-green-400 shadow-[0_0_15px_rgba(0,255,102,0.4)] hover:shadow-[0_0_25px_rgba(0,255,102,0.7)] active:scale-95">
+          <button 
+            onClick={() => lenis?.scrollTo('#contact', { offset: -80 })}
+            className="contactButton relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-semibold text-black bg-green-500 rounded-full overflow-hidden transition-all duration-300 hover:bg-green-400 shadow-[0_0_15px_rgba(0,255,102,0.4)] hover:shadow-[0_0_25px_rgba(0,255,102,0.7)] active:scale-95"
+          >
             Get Quote
           </button>
         </div>
@@ -128,33 +170,39 @@ export default function NavigationBar() {
           >
             <Link
               href="/"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => handleScrollTo(e, "/")}
               className="text-zinc-300 hover:text-green-400 p-3 rounded-xl transition-all"
             >
               Home
             </Link>
             <Link
-              href="/about"
-              onClick={() => setIsOpen(false)}
+              href="#about"
+              onClick={(e) => handleScrollTo(e, "#about")}
               className="text-zinc-300 hover:text-green-400 p-3 rounded-xl transition-all"
             >
               About
             </Link>
             <Link
-              href="/services"
-              onClick={() => setIsOpen(false)}
+              href="#services"
+              onClick={(e) => handleScrollTo(e, "#services")}
               className="text-zinc-300 hover:text-green-400 p-3 rounded-xl transition-all"
             >
               Services
             </Link>
             <Link
-              href="/contact"
-              onClick={() => setIsOpen(false)}
+              href="#contact"
+              onClick={(e) => handleScrollTo(e, "#contact")}
               className="text-zinc-300 hover:text-green-400 p-3 rounded-xl transition-all"
             >
               Contact
             </Link>
-            <button className="mt-2 w-full py-3 text-sm font-semibold text-black bg-green-500 rounded-xl hover:bg-green-400 transition-all shadow-[0_0_15px_rgba(0,255,102,0.4)]">
+            <button 
+              onClick={() => {
+                setIsOpen(false);
+                lenis?.scrollTo('#contact', { offset: -80 });
+              }}
+              className="mt-2 w-full py-3 text-sm font-semibold text-black bg-green-500 rounded-xl hover:bg-green-400 transition-all shadow-[0_0_15px_rgba(0,255,102,0.4)]"
+            >
               Get Quote
             </button>
           </motion.div>

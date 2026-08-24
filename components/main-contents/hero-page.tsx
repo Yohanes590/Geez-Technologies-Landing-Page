@@ -92,7 +92,7 @@ export default function HeroPage() {
 </SpecularButton>
             
          <Link
-  href="/about"
+  href="/#about"
   className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold text-[#16f97d] bg-zinc-950/80 border border-[#16f97d]/30 hover:bg-[#16f97d]/10 hover:border-[#16f97d] hover:shadow-[0_0_20px_rgba(22,249,125,0.15)] rounded-xl backdrop-blur-md transition-all duration-300 active:scale-95 shrink-0"
 >
   Learn More
