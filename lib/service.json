@@ -1,0 +1,152 @@
+[
+  {
+    "category": "01 · COMPLY",
+    "subtitle": "Governance, risk, and audit — the obligations that carry the fines.",
+    "services": [
+      {
+        "title": "Critical Infrastructure Compliance Readiness Assessment",
+        "tagline": "Know exactly where you stand against all 18 obligations — before INSA does.",
+        "description": "A structured gap assessment across every requirement of the proclamation, delivered as a scored compliance baseline, a prioritised remediation roadmap, and a realistic budget and timeline to reach full compliance within the grace period. The fastest way to turn a legal deadline into a project plan.",
+        "obligation": "risk assessment · governance · audit readiness"
+      },
+      {
+        "title": "Cyber Risk Assessment",
+        "tagline": "Periodic, evidence-backed risk assessments that satisfy the law and actually guide spending.",
+        "description": "Asset and crown-jewel identification, threat modelling, likelihood and impact scoring, and a risk register your board can act on. Delivered on a recurring schedule so the obligation stays continuously met rather than expiring between audits.",
+        "obligation": "periodic cyber risk assessment"
+      },
+      {
+        "title": "Cyber Audit Readiness & Certification Support",
+        "tagline": "Walk into your audit with the evidence already assembled.",
+        "description": "We pre-audit your environment against the applicable technical standards, identify every finding before an external auditor does, remediate what can be fixed, and package the documentary evidence — policies, logs, test reports, control attestations — into an audit-ready file.",
+        "obligation": "cyber audit certification"
+      },
+      {
+        "title": "Cybersecurity Governance & Strategy Development",
+        "tagline": "Policies, structures, and a strategy that stand up to scrutiny.",
+        "description": "We build your internal cybersecurity framework end to end: security policy suite, roles and responsibilities, steering committee structure, KPIs, board reporting cadence, and a multi-year cybersecurity strategy aligned to your sector's threat profile and the proclamation's requirements.",
+        "obligation": "internal cybersecurity framework · institutional governance · cybersecurity strategy"
+      },
+      {
+        "title": "Supply Chain & Third-Party Security Assessment",
+        "tagline": "Your vendors are your attack surface. Assess them like it.",
+        "description": "Third-party risk methodology, vendor security questionnaires, technical assessment of critical suppliers and integrators, contractual security clause development, and an ongoing vendor risk register. A named obligation almost no Ethiopian operator has addressed yet.",
+        "obligation": "supply chain security"
+      }
+    ]
+  },
+  {
+    "category": "02 · ASSESS",
+    "subtitle": "Penetration testing and technical evaluation.",
+    "services": [
+      {
+        "title": "Penetration Testing Services",
+        "tagline": "Adversary simulation across every layer of your environment.",
+        "description": "Our core offensive practice, delivered by certified testers and mapped to PTES, OWASP, and NIST SP 800-115 — with reports written to serve as audit evidence: Web Application, Mobile, External, Internal, Active Directory, Cloud, Container/Kubernetes, CI/CD Pipeline, and CMS Testing.",
+        "obligation": "risk assessment · audit evidence · vulnerability remediation"
+      },
+      {
+        "title": "Configuration Review & Hardening",
+        "tagline": "Close the gaps attackers walk through before they find them.",
+        "description": "Systematic review of your servers, endpoints, directory services, cloud tenancy, and network devices against recognised secure-configuration baselines (CIS Benchmarks, vendor hardening guides, Microsoft security baselines) — turning default, drifted, or misconfigured systems into a documented, defensible standard.",
+        "obligation": "implementing secure configuration and baseline security controls"
+      },
+      {
+        "title": "Adversary Simulation & Red Teaming",
+        "tagline": "Find out how you'd actually fare against a real attacker — before one shows up.",
+        "description": "Goal-oriented, intelligence-led engagements that emulate the tactics, techniques, and procedures of the threat actors targeting Ethiopian institutions, going beyond a vulnerability list to test whether your people, processes, and technology detect and respond under genuine pressure.",
+        "obligation": "periodic security testing and validation of defensive controls"
+      }
+    ]
+  },
+  {
+    "category": "03 · DEFEND",
+    "subtitle": "Continuous monitoring and offensive validation.",
+    "services": [
+      {
+        "title": "Managed SOC / MDR — 24/7 Security Operations",
+        "tagline": "The dedicated Security Operations Centre the proclamation requires, without building one.",
+        "description": "Full-stack monitoring across your network, servers, and endpoints using Wazuh SIEM and enterprise EDR, staffed by our analysts, with detection engineering, threat hunting, alert triage, and containment. Delivered as fully managed, co-managed, or build-and-transfer.",
+        "obligation": "dedicated Security Operations Centre · continuous monitoring"
+      },
+      {
+        "title": "Endpoint Detection & Response (EDR) Management",
+        "tagline": "Every endpoint watched, hardened, and accounted for.",
+        "description": "Deployment, tuning, and day-to-day management of EDR across your estate, with coverage reporting that proves no endpoint is dark — the exact evidence auditors look for first.",
+        "obligation": "technical safeguards · vulnerability remediation"
+      },
+      {
+        "title": "Vulnerability Management Programme",
+        "tagline": "Continuous discovery, prioritisation, and closure — not an annual scan.",
+        "description": "Scheduled authenticated scanning across infrastructure, applications, and cloud, with risk-based prioritisation, remediation tracking, verification retesting, and burndown reporting that demonstrates measurable improvement over time.",
+        "obligation": "timely remediation of system vulnerabilities"
+      },
+      {
+        "title": "Attack Surface Management",
+        "tagline": "See your organisation the way an attacker sees it.",
+        "description": "Continuous discovery and monitoring of your external footprint — exposed services, forgotten subdomains, shadow IT, leaked credentials, expiring certificates — with alerting when your exposure changes.",
+        "obligation": "risk assessment · technical safeguards"
+      },
+      {
+        "title": "Malware Assessment & Compromise Hunting",
+        "tagline": "Find what's already inside before it announces itself.",
+        "description": "Proactive threat hunting across endpoints and network telemetry for persistence, credential theft, lateral movement, and dormant implants — with a formal compromise assessment report.",
+        "obligation": "monitoring · incident detection"
+      }
+    ]
+  },
+  {
+    "category": "04 · RESPOND",
+    "subtitle": "The 48-hour clock starts at detection.",
+    "services": [
+      {
+        "title": "48-Hour Incident Reporting & Response Retainer",
+        "tagline": "Guaranteed response, containment, and a National CERT-ready notification inside the legal window.",
+        "description": "A standing retainer with defined response SLAs, pre-agreed escalation paths, and a reporting package built to the National Computer Emergency Response Centre's requirements — so a detected incident becomes a compliant notification.",
+        "obligation": "48-hour incident reporting · corrective measures"
+      },
+      {
+        "title": "Digital Forensics & Incident Response (DFIR)",
+        "tagline": "Full-scope investigation when something has already happened.",
+        "description": "Evidence acquisition with chain of custody, host and network forensics, malware analysis, kill-chain reconstruction, MITRE ATT&CK mapping, IoC extraction, and a formal report suitable for regulators, insurers, and legal proceedings.",
+        "obligation": "incident response · corrective measures"
+      },
+      {
+        "title": "Ransomware Readiness & Recovery",
+        "tagline": "Survive the attack that ends other institutions.",
+        "description": "Pre-incident readiness review of backups, segmentation, privileged access, and recovery runbooks — plus full recovery support if you are already under attack or extortion.",
+        "obligation": "incident response · business continuity"
+      },
+      {
+        "title": "Tabletop Exercises & Crisis Simulation",
+        "tagline": "Rehearse the 48 hours before you have to live them.",
+        "description": "Facilitated scenario exercises for executives and technical teams — ransomware, data breach, insider threat — testing decision-making, escalation, and regulatory notification under time pressure.",
+        "obligation": "preparedness · incident response capability"
+      }
+    ]
+  },
+  {
+    "category": "05 · EMPOWER",
+    "subtitle": "The certified people the law requires.",
+    "services": [
+      {
+        "title": "Cybersecurity Awareness Training",
+        "tagline": "Turn your largest attack surface into your first line of defence.",
+        "description": "Role-based awareness programmes with phishing simulation, delivered in English and Amharic, using scenarios grounded in the local threat landscape — Telebirr, CBE SMS fraud, Telegram-based social engineering.",
+        "obligation": "workforce security awareness"
+      },
+      {
+        "title": "Geez Security Academy — Professional Certification Track",
+        "tagline": "Build the certified security professionals your institution is required to employ.",
+        "description": "Structured technical training from foundation to advanced — SOC analysis, incident response, red teaming, and Active Directory security — designed to produce staff who meet legal competency expectations.",
+        "obligation": "employing qualified cybersecurity professionals"
+      },
+      {
+        "title": "Embedded Analyst & Security Staffing",
+        "tagline": "Qualified, cleared security staff placed directly in your team.",
+        "description": "Short- and long-term placement of SOC analysts, incident responders, and security engineers for institutions building internal capability under the one-year transition window.",
+        "obligation": "qualified cybersecurity personnel"
+      }
+    ]
+  }
+]
