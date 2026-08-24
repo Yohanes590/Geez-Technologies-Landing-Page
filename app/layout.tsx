@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     siteName: "Geez Security",
     images: [
       {
-        url: "/og-image.png",
+        url: "/banner.jpg",
         width: 1200,
         height: 630,
         alt: "Geez Security Platform Overview",
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: "Geez Security | AI-Powered GitHub Vulnerability Scanner",
     description:
       "Scan GitHub repos for vulnerabilities and receive automated code fixes instantly.",
-    images: ["/og-image.png"],
+    images: ["/banner.jpg"],
   },
 };
 
