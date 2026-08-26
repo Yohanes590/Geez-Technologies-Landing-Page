@@ -95,7 +95,6 @@ export default function ContactSection() {
                   <div>
                     <span className="text-xs font-mono text-gray-400 uppercase">Support Email</span>
                     <p className="text-sm font-bold text-white mt-0.5">support@geezsecurity.com</p>
-                    <span className="text-[10px] text-gray-500 font-mono">PGP Key Available On Request</span>
                   </div>
                 </div>
 

@@ -66,7 +66,7 @@ export default function AboutSection() {
                     </p>
                   </div>
                   <div className="pt-4 border-t border-zinc-800 text-xs font-mono text-zinc-500 flex justify-between">
-                    <span>GEEZ TECH</span>
+                    <span>GEEZ SEC</span>
                     <span className="text-green-400">EST. 2024</span>
                   </div>
                 </div>

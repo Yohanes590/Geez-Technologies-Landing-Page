@@ -5,7 +5,7 @@
     "services": [
       {
         "title": "Critical Infrastructure Compliance Readiness Assessment",
-        "tagline": "Know exactly where you stand against all 18 obligations — before INSA does.",
+        "tagline": "Know exactly where you stand against all 18 obligations ",
         "description": "A structured gap assessment across every requirement of the proclamation, delivered as a scored compliance baseline, a prioritised remediation roadmap, and a realistic budget and timeline to reach full compliance within the grace period. The fastest way to turn a legal deadline into a project plan.",
         "obligation": "risk assessment · governance · audit readiness"
       },
@@ -29,7 +29,7 @@
       },
       {
         "title": "Supply Chain & Third-Party Security Assessment",
-        "tagline": "Your vendors are your attack surface. Assess them like it.",
+        "tagline": "Your vendors are your attack surface. Assess the Integration.",
         "description": "Third-party risk methodology, vendor security questionnaires, technical assessment of critical suppliers and integrators, contractual security clause development, and an ongoing vendor risk register. A named obligation almost no Ethiopian operator has addressed yet.",
         "obligation": "supply chain security"
       }

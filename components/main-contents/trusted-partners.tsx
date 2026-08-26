@@ -26,7 +26,7 @@ const trustedPartners = [
     node: (
       <div className="group flex items-center gap-4 font-mono text-zinc-300 hover:text-[#16f97d] transition-colors cursor-pointer">
         <SiFortinet className="w-9 h-9 text-[#16f97d]/80 group-hover:text-[#16f97d] transition-colors" />
-        <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">FORTINET FORTIGATE</span>
+        <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">FORTINET</span>
       </div>
     ), 
     title: "Fortinet Security Fabric", 
@@ -36,7 +36,7 @@ const trustedPartners = [
     node: (
       <div className="group flex items-center gap-4 font-mono text-zinc-300 hover:text-[#16f97d] transition-colors cursor-pointer">
         <SiKaspersky className="w-9 h-9 text-[#16f97d]/80 group-hover:text-[#16f97d] transition-colors" />
-        <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">KASPERSKY LABS</span>
+        <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">KASPERSKY </span>
       </div>
     ), 
     title: "Kaspersky Threat Intelligence", 
@@ -46,7 +46,7 @@ const trustedPartners = [
     node: (
       <div className="group flex items-center gap-4 font-mono text-zinc-300 hover:text-[#16f97d] transition-colors cursor-pointer">
         <SiMalwarebytes className="w-9 h-9 text-[#16f97d]/80 group-hover:text-[#16f97d] transition-colors" />
-        <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">MALWAREBYTES EDR</span>
+        <span className="text-base sm:text-lg font-extrabold tracking-wider uppercase">MALWAREBYTES </span>
       </div>
     ), 
     title: "Malwarebytes Endpoint Defense", 

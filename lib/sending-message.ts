@@ -4,7 +4,7 @@ export async function SendingMessage(customer_name: string,  customer_email: str
 
 
     const message = `
-🛒 *Geez Tech New Customer*
+🛒 *Geez Sec New Customer*
 ------------------------------------------
 👤 *Full Name:* ${customer_name}
 ✉️ *Email:* ${customer_email}

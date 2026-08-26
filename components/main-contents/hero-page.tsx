@@ -144,7 +144,7 @@ export default function HeroPage() {
 
           <div className="mt-12 pt-8 border-t border-zinc-800/80 w-full grid grid-cols-3 gap-6">
             <div>
-              <span className="block text-2xl sm:text-3xl font-extrabold text-green-400 font-mono">100%</span>
+              <span className="block text-2xl sm:text-3xl font-extrabold text-green-400 font-mono">99%</span>
               <span className="text-xs sm:text-sm text-zinc-400 mt-1 block">Threat Detection</span>
             </div>
             <div>
@@ -244,7 +244,7 @@ export default function HeroPage() {
 
                 <div className="mt-4 pt-3 border-t border-zinc-800/80 flex items-center justify-between text-[11px] text-zinc-400">
                   <span>System Health Status</span>
-                  <span className="text-green-400 font-semibold">Protected by Geez Tech</span>
+                  <span className="text-green-400 font-semibold">Protected by Geez Sec</span>
                 </div>
               </div>
             </div>
