@@ -20,7 +20,6 @@ const trustedPartners = [
       </div>
     ), 
     title: "Palo Alto Networks Integration", 
-    href: "#" 
   },
   { 
     node: (
@@ -30,7 +29,6 @@ const trustedPartners = [
       </div>
     ), 
     title: "Fortinet Security Fabric", 
-    href: "#" 
   },
   { 
     node: (
@@ -40,7 +38,6 @@ const trustedPartners = [
       </div>
     ), 
     title: "Kaspersky Threat Intelligence", 
-    href: "#" 
   },
   { 
     node: (
@@ -50,7 +47,6 @@ const trustedPartners = [
       </div>
     ), 
     title: "Malwarebytes Endpoint Defense", 
-    href: "#" 
   },
   { 
     node: (
@@ -60,7 +56,7 @@ const trustedPartners = [
       </div>
     ), 
     title: "Cloudflare Network Shield", 
-    href: "#" 
+   
   },
   // { 
   //   node: (
