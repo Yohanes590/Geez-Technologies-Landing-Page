@@ -1,7 +1,7 @@
 [
   {
     "category": "01 · COMPLY",
-    "subtitle": "Governance, risk, and audit — the obligations that carry the fines.",
+    "subtitle": "Governance, risk, and audit the obligations that carry the fines.",
     "services": [
       {
         "title": "Critical Infrastructure Compliance Readiness Assessment",
@@ -18,7 +18,7 @@
       {
         "title": "Cyber Audit Readiness & Certification Support",
         "tagline": "Walk into your audit with the evidence already assembled.",
-        "description": "We pre-audit your environment against the applicable technical standards, identify every finding before an external auditor does, remediate what can be fixed, and package the documentary evidence — policies, logs, test reports, control attestations — into an audit-ready file.",
+        "description": "We pre-audit your environment against the applicable technical standards, identify every finding before an external auditor does, remediate what can be fixed, and package the documentary evidence  policies, logs, test reports, control attestations   into an audit-ready file.",
         "obligation": "cyber audit certification"
       },
       {
@@ -42,18 +42,18 @@
       {
         "title": "Penetration Testing Services",
         "tagline": "Adversary simulation across every layer of your environment.",
-        "description": "Our core offensive practice, delivered by certified testers and mapped to PTES, OWASP, and NIST SP 800-115 — with reports written to serve as audit evidence: Web Application, Mobile, External, Internal, Active Directory, Cloud, Container/Kubernetes, CI/CD Pipeline, and CMS Testing.",
+        "description": "Our core offensive practice, delivered by certified testers and mapped to PTES, OWASP, and NIST SP 800-115   with reports written to serve as audit evidence: Web Application, Mobile, External, Internal, Active Directory, Cloud, Container/Kubernetes, CI/CD Pipeline, and CMS Testing.",
         "obligation": "risk assessment · audit evidence · vulnerability remediation"
       },
       {
         "title": "Configuration Review & Hardening",
         "tagline": "Close the gaps attackers walk through before they find them.",
-        "description": "Systematic review of your servers, endpoints, directory services, cloud tenancy, and network devices against recognised secure-configuration baselines (CIS Benchmarks, vendor hardening guides, Microsoft security baselines) — turning default, drifted, or misconfigured systems into a documented, defensible standard.",
+        "description": "Systematic review of your servers, endpoints, directory services, cloud tenancy, and network devices against recognised secure-configuration baselines (CIS Benchmarks, vendor hardening guides, Microsoft security baselines)   turning default, drifted, or misconfigured systems into a documented, defensible standard.",
         "obligation": "implementing secure configuration and baseline security controls"
       },
       {
         "title": "Adversary Simulation & Red Teaming",
-        "tagline": "Find out how you'd actually fare against a real attacker — before one shows up.",
+        "tagline": "Find out how you'd actually fare against a real attacker   before one shows up.",
         "description": "Goal-oriented, intelligence-led engagements that emulate the tactics, techniques, and procedures of the threat actors targeting Ethiopian institutions, going beyond a vulnerability list to test whether your people, processes, and technology detect and respond under genuine pressure.",
         "obligation": "periodic security testing and validation of defensive controls"
       }
@@ -64,7 +64,7 @@
     "subtitle": "Continuous monitoring and offensive validation.",
     "services": [
       {
-        "title": "Managed SOC / MDR — 24/7 Security Operations",
+        "title": "Managed SOC / MDR   24/7 Security Operations",
         "tagline": "The dedicated Security Operations Centre the proclamation requires, without building one.",
         "description": "Full-stack monitoring across your network, servers, and endpoints using Wazuh SIEM and enterprise EDR, staffed by our analysts, with detection engineering, threat hunting, alert triage, and containment. Delivered as fully managed, co-managed, or build-and-transfer.",
         "obligation": "dedicated Security Operations Centre · continuous monitoring"
@@ -72,25 +72,25 @@
       {
         "title": "Endpoint Detection & Response (EDR) Management",
         "tagline": "Every endpoint watched, hardened, and accounted for.",
-        "description": "Deployment, tuning, and day-to-day management of EDR across your estate, with coverage reporting that proves no endpoint is dark — the exact evidence auditors look for first.",
+        "description": "Deployment, tuning, and day-to-day management of EDR across your estate, with coverage reporting that proves no endpoint is dark   the exact evidence auditors look for first.",
         "obligation": "technical safeguards · vulnerability remediation"
       },
       {
         "title": "Vulnerability Management Programme",
-        "tagline": "Continuous discovery, prioritisation, and closure — not an annual scan.",
+        "tagline": "Continuous discovery, prioritisation, and closure   not an annual scan.",
         "description": "Scheduled authenticated scanning across infrastructure, applications, and cloud, with risk-based prioritisation, remediation tracking, verification retesting, and burndown reporting that demonstrates measurable improvement over time.",
         "obligation": "timely remediation of system vulnerabilities"
       },
       {
         "title": "Attack Surface Management",
         "tagline": "See your organisation the way an attacker sees it.",
-        "description": "Continuous discovery and monitoring of your external footprint — exposed services, forgotten subdomains, shadow IT, leaked credentials, expiring certificates — with alerting when your exposure changes.",
+        "description": "Continuous discovery and monitoring of your external footprint   exposed services, forgotten subdomains, shadow IT, leaked credentials, expiring certificates   with alerting when your exposure changes.",
         "obligation": "risk assessment · technical safeguards"
       },
       {
         "title": "Malware Assessment & Compromise Hunting",
         "tagline": "Find what's already inside before it announces itself.",
-        "description": "Proactive threat hunting across endpoints and network telemetry for persistence, credential theft, lateral movement, and dormant implants — with a formal compromise assessment report.",
+        "description": "Proactive threat hunting across endpoints and network telemetry for persistence, credential theft, lateral movement, and dormant implants   with a formal compromise assessment report.",
         "obligation": "monitoring · incident detection"
       }
     ]
@@ -102,7 +102,7 @@
       {
         "title": "48-Hour Incident Reporting & Response Retainer",
         "tagline": "Guaranteed response, containment, and a National CERT-ready notification inside the legal window.",
-        "description": "A standing retainer with defined response SLAs, pre-agreed escalation paths, and a reporting package built to the National Computer Emergency Response Centre's requirements — so a detected incident becomes a compliant notification.",
+        "description": "A standing retainer with defined response SLAs, pre-agreed escalation paths, and a reporting package built to the National Computer Emergency Response Centre's requirements   so a detected incident becomes a compliant notification.",
         "obligation": "48-hour incident reporting · corrective measures"
       },
       {
@@ -114,13 +114,13 @@
       {
         "title": "Ransomware Readiness & Recovery",
         "tagline": "Survive the attack that ends other institutions.",
-        "description": "Pre-incident readiness review of backups, segmentation, privileged access, and recovery runbooks — plus full recovery support if you are already under attack or extortion.",
+        "description": "Pre-incident readiness review of backups, segmentation, privileged access, and recovery runbooks   plus full recovery support if you are already under attack or extortion.",
         "obligation": "incident response · business continuity"
       },
       {
         "title": "Tabletop Exercises & Crisis Simulation",
         "tagline": "Rehearse the 48 hours before you have to live them.",
-        "description": "Facilitated scenario exercises for executives and technical teams — ransomware, data breach, insider threat — testing decision-making, escalation, and regulatory notification under time pressure.",
+        "description": "Facilitated scenario exercises for executives and technical teams   ransomware, data breach, insider threat   testing decision-making, escalation, and regulatory notification under time pressure.",
         "obligation": "preparedness · incident response capability"
       }
     ]
@@ -133,7 +133,7 @@
       {
         "title": "Cybersecurity Awareness Training",
         "tagline": "Turn your largest attack surface into your first line of defence.",
-        "description": "Role-based awareness programmes with phishing simulation, delivered in English and Amharic, using scenarios grounded in the local threat landscape — Telebirr, CBE SMS fraud, Telegram-based social engineering.",
+        "description": "Role-based awareness programmes with phishing simulation, delivered in English and Amharic, using scenarios grounded in the local threat landscape   Telebirr, CBE SMS fraud, Telegram-based social engineering.",
         "obligation": "workforce security awareness",
         "link":"https://academy.geezsecurity.com/"
 
@@ -141,7 +141,7 @@
       {
         "title": "Geez Security Academy Professional Certification Track",
         "tagline": "Build the certified security professionals your institution is required to employ.",
-        "description": "Structured technical training from foundation to advanced — SOC analysis, incident response, red teaming, and Active Directory security — designed to produce staff who meet legal competency expectations.",
+        "description": "Structured technical training from foundation to advanced   SOC analysis, incident response, red teaming, and Active Directory security   designed to produce staff who meet legal competency expectations.",
         "obligation": "employing qualified cybersecurity professionals",
         "link":"https://academy.geezsecurity.com/"
 
