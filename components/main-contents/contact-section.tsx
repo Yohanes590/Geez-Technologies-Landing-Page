@@ -120,7 +120,7 @@ export default function ContactSection() {
                     <span className="text-[10px] text-gray-500 font-mono">Secure On-Site Operations Center</span>
                   </div>
                 </div>
-              </div>``
+              </div>
             </div>
 
             {/* Compliance Guarantee Badges */}
