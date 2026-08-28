@@ -249,3 +249,5 @@ export default function ContactSection() {
     </section>
   );
 }
+
+// https://www.tiktok.com/@bilusuuma/video/7678852187220561172?is_from_webapp=1&sender_device=pc

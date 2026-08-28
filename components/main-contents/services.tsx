@@ -10,6 +10,7 @@ import {
   ShieldCheck,
   X,
   ArrowRight,
+  ExternalLink,
   LucideIcon
 } from "lucide-react";
 
@@ -20,6 +21,7 @@ interface ServiceDetail {
   tagline: string;
   description: string;
   obligation: string;
+  link: string;
 }
 
 interface CategoryData {
@@ -37,23 +39,22 @@ const CATEGORY_ICONS: Record<string, LucideIcon> = {
 };
 
 export default function ServicesSection() {
-  const data = servicesData as CategoryData[];
+  const data = (servicesData || []) as CategoryData[];
   const [activeTab, setActiveTab] = useState<number>(0);
   const [selectedService, setSelectedService] = useState<{
     service: ServiceDetail;
+    link: string;
     category: string;
   } | null>(null);
 
-  const activeCategory = data[activeTab];
+  const activeCategory = data[activeTab] || { category: "", subtitle: "", services: [] };
   const ActiveIcon = CATEGORY_ICONS[activeCategory.category] || FileCheck;
 
-  // Lock body scroll when modal is active
+  // Lock body scroll and handle Escape key when modal is open
   useEffect(() => {
-    if (selectedService) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "unset";
-    }
+    if (!selectedService) return;
+
+    document.body.style.overflow = "hidden";
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") setSelectedService(null);
@@ -68,7 +69,7 @@ export default function ServicesSection() {
 
   return (
     <section id="services" className="relative w-full bg-black text-white py-24 px-4 sm:px-8 overflow-hidden">
-      {/* Soft Ambient Green Background Glows */}
+      {/* Background Ambient Glows */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-[#16f97d]/10 blur-[180px] rounded-full pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[500px] h-[350px] bg-[#16f97d]/5 blur-[150px] rounded-full pointer-events-none" />
 
@@ -100,7 +101,7 @@ export default function ServicesSection() {
 
               return (
                 <button
-                  key={cat.category}
+                  key={cat.category || idx}
                   onClick={() => setActiveTab(idx)}
                   className={`relative flex flex-col items-center justify-center py-4 px-3 rounded-xl transition-all duration-300 cursor-pointer group ${
                     isSelected
@@ -111,7 +112,7 @@ export default function ServicesSection() {
                   <div className="flex items-center gap-1.5 mb-1">
                     <Icon className={`w-4 h-4 ${isSelected ? "text-black" : "text-[#16f97d]"}`} />
                     <span className="text-xs font-bold uppercase tracking-wider">
-                      {cat.category.split("·")[1]?.trim()}
+                      {cat.category.split("·")[1]?.trim() || cat.category}
                     </span>
                   </div>
                   <span className={`text-[10px] font-mono ${isSelected ? "text-black/80" : "text-gray-400"}`}>
@@ -140,16 +141,16 @@ export default function ServicesSection() {
           </div>
 
           <div className="self-start md:self-auto px-4 py-2 rounded-full bg-white/[0.05] border border-white/10 text-xs font-mono text-gray-300">
-            Showing <span className="text-[#16f97d] font-bold">{activeCategory.services.length}</span> Services
+            Showing <span className="text-[#16f97d] font-bold">{activeCategory.services?.length || 0}</span> Services
           </div>
         </div>
 
         {/* Glass Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {activeCategory.services.map((item, idx) => (
+          {activeCategory.services?.map((item, idx) => (
             <div
               key={idx}
-              onClick={() => setSelectedService({ service: item, category: activeCategory.category })}
+              onClick={() => setSelectedService({ service: item, category: activeCategory.category, link: item.link })}
               className="group relative flex flex-col justify-between p-7 rounded-2xl bg-white/[0.02] hover:bg-white/[0.05] border border-white/10 hover:border-[#16f97d]/50 backdrop-blur-xl transition-all duration-300 hover:shadow-[0_10px_30px_-10px_rgba(22,249,125,0.2)] hover:-translate-y-1 cursor-pointer"
             >
               <div>
@@ -215,7 +216,7 @@ export default function ServicesSection() {
               </div>
               <button
                 onClick={() => setSelectedService(null)}
-                className="p-2 rounded-full bg-white/[0.05] hover:bg-white/10 border border-white/10 text-gray-400 hover:text-white transition-colors"
+                className="p-2 rounded-full bg-white/[0.05] hover:bg-white/10 border border-white/10 text-gray-400 hover:text-white transition-colors cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -237,7 +238,7 @@ export default function ServicesSection() {
             </div>
 
             {/* Compliance & Obligation Box */}
-            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 relative z-10">
+            <div className="p-5 rounded-2xl bg-white/[0.03] border border-white/10 relative z-10 mb-8">
               <div className="flex items-center gap-2 mb-2 text-[#16f97d]">
                 <ShieldCheck className="w-5 h-5" />
                 <span className="text-xs font-mono font-bold uppercase tracking-wider">Regulatory & Compliance Obligation</span>
@@ -248,7 +249,18 @@ export default function ServicesSection() {
             </div>
 
             {/* Action Footer */}
-            <div className="mt-8 pt-6 border-t border-white/10 flex justify-end gap-3 relative z-10">
+            <div className="pt-6 border-t border-white/10 flex items-center justify-between gap-3 relative z-10">
+              {selectedService.service.link ? (
+                <a
+                  href={selectedService.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#16f97d] hover:bg-[#16f97d]/90 text-black font-bold text-sm transition-all"
+                >
+                  Explore Service <ExternalLink className="w-4 h-4" />
+                </a>
+              ) : <div />}
+              
               <button
                 onClick={() => setSelectedService(null)}
                 className="px-6 py-2.5 rounded-xl bg-white/[0.05] hover:bg-white/10 border border-white/10 text-sm font-semibold text-white transition-all cursor-pointer"

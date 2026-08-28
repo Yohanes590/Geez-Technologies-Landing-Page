@@ -128,24 +128,31 @@
   {
     "category": "05 · EMPOWER",
     "subtitle": "The certified people the law requires.",
+    "link":"https://academy.geezsecurity.com/",
     "services": [
       {
         "title": "Cybersecurity Awareness Training",
         "tagline": "Turn your largest attack surface into your first line of defence.",
         "description": "Role-based awareness programmes with phishing simulation, delivered in English and Amharic, using scenarios grounded in the local threat landscape — Telebirr, CBE SMS fraud, Telegram-based social engineering.",
-        "obligation": "workforce security awareness"
+        "obligation": "workforce security awareness",
+        "link":"https://academy.geezsecurity.com/"
+
       },
       {
-        "title": "Geez Security Academy — Professional Certification Track",
+        "title": "Geez Security Academy Professional Certification Track",
         "tagline": "Build the certified security professionals your institution is required to employ.",
         "description": "Structured technical training from foundation to advanced — SOC analysis, incident response, red teaming, and Active Directory security — designed to produce staff who meet legal competency expectations.",
-        "obligation": "employing qualified cybersecurity professionals"
+        "obligation": "employing qualified cybersecurity professionals",
+        "link":"https://academy.geezsecurity.com/"
+
       },
       {
         "title": "Embedded Analyst & Security Staffing",
         "tagline": "Qualified, cleared security staff placed directly in your team.",
         "description": "Short- and long-term placement of SOC analysts, incident responders, and security engineers for institutions building internal capability under the one-year transition window.",
-        "obligation": "qualified cybersecurity personnel"
+        "obligation": "qualified cybersecurity personnel",
+        "link":"https://academy.geezsecurity.com/"
+
       }
     ]
   }
