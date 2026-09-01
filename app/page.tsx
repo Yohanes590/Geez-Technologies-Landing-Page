@@ -1,3 +1,4 @@
+"use client"
 import HeroPage from "@/components/main-contents/hero-page";
 import NavigationBar from "@/components/main-contents/navigation";
 import ScrolledContent from "@/components/main-contents/scrolled-content";

@@ -96,25 +96,7 @@ const CATEGORY_THEMES: Record<string, ThemeConfig> = {
     btnHover: "hover:bg-blue-600",
   },
   // Incident Response -> AMBER / ORANGE
-  "04 · RESPOND": {
-    primaryHex: "#f59e0b",
-    badgeBg: "bg-amber-500/10",
-    badgeBorder: "border-amber-500/30",
-    badgeText: "text-amber-400",
-    glowBg: "bg-amber-500",
-    tabActive: "bg-amber-500 text-black font-extrabold shadow-[0_0_25px_rgba(245,158,11,0.4)] scale-[1.02]",
-    iconActive: "text-amber-400",
-    textPrimary: "text-amber-400",
-    cardBorderHover: "hover:border-amber-500/50",
-    cardShadowHover: "hover:shadow-[0_10px_30px_-10px_rgba(245,158,11,0.2)]",
-    modalBorder: "border-amber-500/30",
-    modalShadow: "shadow-[0_0_50px_rgba(245,158,11,0.15)]",
-    modalTaglineBorder: "border-amber-500",
-    btnBg: "bg-amber-500",
-    btnHover: "hover:bg-amber-600",
-  },
-  // Training & Culture -> PURPLE
-  "05 · EMPOWER": {
+ "04 · RESPOND": {
     primaryHex: "#a855f7",
     badgeBg: "bg-purple-500/10",
     badgeBorder: "border-purple-500/30",
@@ -130,6 +112,24 @@ const CATEGORY_THEMES: Record<string, ThemeConfig> = {
     modalTaglineBorder: "border-purple-500",
     btnBg: "bg-purple-500",
     btnHover: "hover:bg-purple-600",
+  },
+  // Training & Culture -> AMBER / ORANGE
+  "05 · EMPOWER": {
+    primaryHex: "#f59e0b",
+    badgeBg: "bg-amber-500/10",
+    badgeBorder: "border-amber-500/30",
+    badgeText: "text-amber-400",
+    glowBg: "bg-amber-500",
+    tabActive: "bg-amber-500 text-black font-extrabold shadow-[0_0_25px_rgba(245,158,11,0.4)] scale-[1.02]",
+    iconActive: "text-amber-400",
+    textPrimary: "text-amber-400",
+    cardBorderHover: "hover:border-amber-500/50",
+    cardShadowHover: "hover:shadow-[0_10px_30px_-10px_rgba(245,158,11,0.2)]",
+    modalBorder: "border-amber-500/30",
+    modalShadow: "shadow-[0_0_50px_rgba(245,158,11,0.15)]",
+    modalTaglineBorder: "border-amber-500",
+    btnBg: "bg-amber-500",
+    btnHover: "hover:bg-amber-600",
   },
   // Default Governance & Compliance -> EMERALD GREEN
   "DEFAULT": {

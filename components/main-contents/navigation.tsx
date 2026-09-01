@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import { useLenis } from "lenis/react";
-
+import GlassSurface from "../GlassSurface";
 export default function NavigationBar() {
   const [scrolled, setScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -22,7 +22,6 @@ export default function NavigationBar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Helper function for Lenis navigation
   const handleScrollTo = (
     e: React.MouseEvent<HTMLAnchorElement>,
     target: string
