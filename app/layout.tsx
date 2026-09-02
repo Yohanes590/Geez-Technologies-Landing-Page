@@ -14,64 +14,71 @@ const fontMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Geez Security | AI-Powered GitHub Vulnerability Scanner",
-    template: "%s | Geez Security",
+  "title": {
+    "default": "Geez Security | Premier Penetration Testing & Code Security Ethiopia",
+    "template": "%s | Geez Security"
   },
-  description:
-    "Automated GitHub repository security scanner. Identify code vulnerabilities, get actionable automated fixes, and secure your developer codebase instantly.",
-  keywords: [
-    "GitHub security scanner",
+  "description": "Ethiopia's leading cybersecurity firm. We provide penetration testing, vulnerability assessments, DevSecOps integration, and automated GitHub code security scanning for Ethiopian enterprises and developers.",
+  "keywords": [
+    "cybersecurity company Ethiopia",
+    "penetration testing Ethiopia",
     "vulnerability scanner",
+    "GitHub security scanner",
     "code security audit",
     "automated security fixes",
-    "devsecops tool",
+    "DevSecOps tool",
     "Geez Security",
     "static application security testing",
     "SAST tool",
+    "cyber security testing Addis Ababa",
+    "Ethiopian security auditing"
   ],
-  authors: [{ name: "Geez Security Team" }],
-  creator: "Geez Security",
-  publisher: "Geez Security",
-  metadataBase: new URL("https://geezsecurity.com"),
-  alternates: {
-    canonical: "/",
+  "authors": [
+    {
+      "name": "Geez Security Team"
+    }
+  ],
+  "creator": "Geez Security",
+  "publisher": "Geez Security",
+  "metadataBase": "https://geezsecurity.com",
+  "alternates": {
+    "canonical": "/"
   },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
+  "robots": {
+    "index": true,
+    "follow": true,
+    "googleBot": {
+      "index": true,
+      "follow": true,
       "max-video-preview": -1,
       "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+      "max-snippet": -1
+    }
   },
-  openGraph: {
-    title: "Geez Security | AI-Powered GitHub Vulnerability Scanner",
-    description:
-      "Automated GitHub repository security scanner. Identify code vulnerabilities and receive instant, actionable fixes.",
-    url: "https://geezsecurity.com",
-    siteName: "Geez Security",
-    images: [
+  "openGraph": {
+    "title": "Geez Security | Enterprise Cybersecurity & Automated Vulnerability Scanning",
+    "description": "Empowering Ethiopian businesses with local cybersecurity expertise, penetration testing, and automated GitHub code auditing.",
+    "url": "https://geezsecurity.com",
+    "siteName": "Geez Security",
+    "images": [
       {
-        url: "/banner.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Geez Security Platform Overview",
-      },
+        "url": "/banner.jpg",
+        "width": 1200,
+        "height": 630,
+        "alt": "Geez Security Enterprise Cybersecurity & SAST Platform"
+      }
     ],
-    locale: "en_US",
-    type: "website",
+    "locale": "en_US",
+    "type": "website"
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Geez Security | AI-Powered GitHub Vulnerability Scanner",
-    description:
-      "Scan GitHub repos for vulnerabilities and receive automated code fixes instantly.",
-    images: ["/banner.jpg"],
-  },
+  "twitter": {
+    "card": "summary_large_image",
+    "title": "Geez Security | Enterprise Cybersecurity & SAST Platform",
+    "description": "Protect your infrastructure and codebase. Ethiopian cybersecurity testing, vulnerability management, and automated code fixes.",
+    "images": [
+      "/banner.jpg"
+    ]
+  }
 };
 
 export default function RootLayout({
