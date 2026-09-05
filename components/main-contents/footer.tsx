@@ -69,23 +69,13 @@ export default function Footer() {
               </h4>
               <ul className="space-y-2.5 text-xs text-gray-400 font-sans">
                 <li>
-                  <a href="#compliance" className="hover:text-[#16f97d] transition-colors">
+                  <a href="https://insa.gov.et/pdf/critical-infrastructure-cybersecurity-proclamation-no-14262026-1786083598" className="hover:text-[#16f97d] transition-colors">
                     INSA Proclamation Guide
                   </a>
                 </li>
                 <li>
-                  <a href="#retainer" className="hover:text-[#16f97d] transition-colors">
-                    48-Hour IR Retainer
-                  </a>
-                </li>
-                <li>
-                  <a href="#academy" className="hover:text-[#16f97d] transition-colors">
+                  <a href="https://insa.gov.et/pdf/critical-infrastructure-cybersecurity-proclamation-no-14262026-1786083598" className="hover:text-[#16f97d] transition-colors">
                     Geez Security Academy
-                  </a>
-                </li>
-                <li>
-                  <a href="#portal" className="hover:text-[#16f97d] transition-colors">
-                    Client Evidence Vault
                   </a>
                 </li>
               </ul>
